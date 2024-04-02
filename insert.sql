@@ -36,8 +36,15 @@ INSERT INTO rental_history (vID, cID, rent_Date, return_Date, rent_loc, return_l
 (4, 4, '2024-04-13', '2024-04-15', 2, 2, 180.00, 'Rental process was quick and easy.');
 
 -- Inserting into payments
-INSERT INTO payments (amount, cID, eID, rID, method, date, comments) VALUES
-(250.00, 1, 1, 1, 'Credit Card', '2024-04-03', 'Payment for Ford F-150 rental completed.'),
-(300.00, 2, 2, 2, 'Debit Card', '2024-04-07', 'Payment for Chevrolet Silverado rental completed.'),
-(200.00, 3, 3, 3, 'Cash', '2024-04-11', 'Payment for Toyota Camry rental completed.'),
-(180.00, 4, 4, 4, 'PayPal', '2024-04-15', 'Payment for Honda Civic rental completed.');
+INSERT INTO payments (amount, cID, rID, method, date, comments) VALUES
+(250.00, 1, 1,'Credit Card', '2024-04-03', 'Payment for Ford F-150 rental completed.'),
+(300.00, 2, 2,'Debit Card', '2024-04-07', 'Payment for Chevrolet Silverado rental completed.'),
+(200.00, 3, 3,'Cash', '2024-04-11', 'Payment for Toyota Camry rental completed.'),
+(180.00, 4, 4,'PayPal', '2024-04-15', 'Payment for Honda Civic rental completed.');
+
+-- Inserting employee pay into payments 
+INSERT INTO payments (amount, eID, method, date, comments) VALUES
+(-2,166.66, 1, 'DD', '2024-4-5', "Payment made to Ethan Adams")
+(-1958.33, 2, 'Check', '2024-4-5', "Payment made to Sophia Clark")
+(-1791.66, 3, 'DD', '2024-4-5', "Payment made to Noah Garcia")
+(-2333.33, 4, 'DD', '2024-4-5', "Payment made to Emma Davis")
