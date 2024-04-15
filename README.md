@@ -36,4 +36,70 @@ You may customize the `insert.sql` script to fit your specific requirements by e
 
 ## Conclusion
 This README and the accompanying `insert.sql` script are intended to provide a starting point for populating a vehicle rental database with realistic data. It can be used for educational purposes, software development, and database management training related to vehicle rental operations.
-"""
+
+# Vehicle Rental Databse Create Script
+
+## Database Overview
+This database schema supports a vehicle rental management system. Here's a breakdown of the tables and their purpose:
+
+## Tables
+
+### vehicle:
+Stores information about vehicles available for rent.
+**vID**: Unique identifier for each vehicle.
+**lID**: Location ID where the vehicle is primarily located (foreign key to the 'location' table).
+**make**: Vehicle manufacturer.
+**model**: Vehicle model.
+**year**: Vehicle manufacturing year.
+**mileage**: Odometer reading.
+**availability**: Indicates if the vehicle is currently available to rent (Boolean).
+
+### customer:
+Stores customer information.
+**cID**: Unique identifier for each customer.
+**fName**: Customer's first name.
+**lName**: Customer's last name.
+**pNumber**: Customer's phone number.
+**address**: Customer's address.
+**pref_payment**: Customer's preferred payment method.
+
+### rental_history:
+Stores a record of each rental transaction.
+**rID**: Unique identifier for each rental.
+**vID**: ID of the rented vehicle (foreign key).
+**cID**: ID of the customer who rented the vehicle (foreign key).
+**rent_Date**: Date vehicle was rented.
+**return_Date**: Date vehicle was returned
+**rent_loc**: Location ID where the vehicle was rented from (foreign key).
+**return_loc**: Location ID where the vehicle was returned to (foreign key).
+**cost**: Total cost of the rental.
+**comments**: Any additional notes about the rental.
+
+### employee:
+Stores employee information.
+**eID**: Unique identifier for each employee.
+**lID**: Location ID where the employee works (foreign key).
+**fName**: Employee's first name.
+**lName**: Employee's last name.
+**pNumber**: Employee's phone number.
+**address**: Employee's address.
+**salary**: Employee's salary.
+
+### location:
+Stores information about rental locations.
+**lID**: Unique identifier for each location.
+**address**: Location's address.
+**pNumber**: Location's phone number.
+**open**: Location's opening time.
+**close**: Location's closing time.
+
+### payments:
+Tracks payments related to rentals.
+**paymentID**: Unique identifier for each payment.
+**amount**: Payment amount.
+**cID**: Customer ID associated with the payment (foreign key).
+**eID**: Employee ID who processed the payment (foreign key).
+**rID**: Rental ID associated with the payment (foreign key).
+**method**: Payment method (e.g., cash, credit card).
+**date**: Payment date.
+**comments**: Any additional notes about the payment.
