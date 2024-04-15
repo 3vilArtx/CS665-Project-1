@@ -62,12 +62,12 @@ The `create.sql` incorporates the following tables:
 
 ## Create Script
 The `create.sql` script provides sample data to populate the database. This data includes:
-Locations: Realistic addresses and phone numbers of potential rental locations within Wichita, KS.
-Vehicles: Plausible information covering make, model, year, and mileage of rental vehicles.
-Customers: Example customer details including names, addresses, phone numbers, and preferred payment options.
-Employees: Sample employee data with their assigned location, name, contact information, and salary.
-Rental Histories: Representative rental records, including associated vehicle, customer, rental dates, and return details.
-Payments: Payment records linked to rental transactions, specifying the payment method and any additional notes.
+- **Locations**: Realistic addresses and phone numbers of potential rental locations within Wichita, KS.
+- **Vehicles**: Plausible information covering make, model, year, and mileage of rental vehicles.
+- **Customers**: Example customer details including names, addresses, phone numbers, and preferred payment options.
+- **Employees**: Sample employee data with their assigned location, name, contact information, and salary.
+- **Rental** Histories: Representative rental records, including associated vehicle, customer, rental dates, and return details.
+- **Payments**: Payment records linked to rental transactions, specifying the payment method and any additional notes.
 
 ## Usage
 1. **Prerequisites**: A database server (MySQL, PostgreSQL, or similar) capable of executing SQL scripts.
