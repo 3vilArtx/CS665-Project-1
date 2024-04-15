@@ -36,35 +36,32 @@ You may customize the `insert.sql` script to fit your specific requirements by e
 
 # Vehicle Rental Databse Create Script
 
-## Database Overview
-This database schema supports a vehicle rental management system. Here's a breakdown of the tables and their purpose:
-
 ## Overview
-This README accompanies the `insert.sql` script designed for a vehicle rental database. The database schema and sample data emulate a vehicle rental business operating in Wichita, Kansas. The structure is intended to support the management of vehicles, customers, rental histories, employees, locations, and associated payment records.
+This README accompanies the `create.sql` script, which constructs the database schema for a vehicle rental management system. The database is designed with a focus on storing information about vehicles, customers, rental transactions, employees, locations, and payments likely to be relevant to a Wichita, Kansas-based vehicle rental operation.
 
 ## Database Schema
-The database incorporates the following tables:
+The `create.sql` incorporates the following tables:
 
 - **vehicle**: Stores essential information about each vehicle available for rent.
--- **Fields**: vID (unique ID), lID (location ID), make, model, year, mileage, availability (Boolean)
+  - **Fields**: vID (unique ID), lID (location ID), make, model, year, mileage, availability (Boolean)
 
 - **customer**:  Holds customer data.
-**Fields**: cID (unique ID), fName, lName, pNumber (phone number), address, pref_payment (preferred payment method)
+  - **Fields**: cID (unique ID), fName, lName, pNumber (phone number), address, pref_payment (preferred payment method)
 
 - **rental_history**:  Tracks rental transactions.
-Fields: rID (unique ID), vID, cID, rent_Date, return_Date, rent_loc (rental location ID), return_loc (return location ID), cost, comments
+  - **Fields**: rID (unique ID), vID, cID, rent_Date, return_Date, rent_loc (rental location ID), return_loc (return location ID), cost, comments
 
 - **employee**: Contains employee information.
-Fields: eID (unique ID), lID (location ID), fName, lName, pNumber, address, salary
+  - **Fields**: eID (unique ID), lID (location ID), fName, lName, pNumber, address, salary
 
 - **location**: Stores information about rental locations.
-Fields: lID (unique ID), address, pNumber, open (opening time), close (closing time)
+  - **Fields**: lID (unique ID), address, pNumber, open (opening time), close (closing time)
 
 - **payments**: Manages payment records for rentals.
-Fields: paymentID (unique ID), amount, cID, eID, rID, method, date, comments
+  - **Fields**: paymentID (unique ID), amount, cID, eID, rID, method, date, comments
 
-## Insert Script
-The `insert.sql` script provides sample data to populate the database. This data includes:
+## Create Script
+The `create.sql` script provides sample data to populate the database. This data includes:
 Locations: Realistic addresses and phone numbers of potential rental locations within Wichita, KS.
 Vehicles: Plausible information covering make, model, year, and mileage of rental vehicles.
 Customers: Example customer details including names, addresses, phone numbers, and preferred payment options.
@@ -73,10 +70,12 @@ Rental Histories: Representative rental records, including associated vehicle, c
 Payments: Payment records linked to rental transactions, specifying the payment method and any additional notes.
 
 ## Usage
-Prerequisites: A running database server (MySQL, PostgreSQL, or similar).
-Schema Creation: Create the database schema using a separate script (not included).
-Execution: Run the `insert.sql` script to populate the database with the initial data.
-Refer to your database system's documentation for specific instructions on script execution.
+1. **Prerequisites**: A database server (MySQL, PostgreSQL, or similar) capable of executing SQL scripts.
+2. **Execution**: Run the `create.sql` script to build the database schema.
+3. **Population**: Utilize a separate script (e.g., `insert.sql`) to insert data into the newly created tables.
 
 ## Customization
-Tailor the `insert.sql` script to your needs by modifying the SQL INSERT statements. Add new data, change existing values, or delete entries as required.
+The schema defined in create.sql provides a foundation. You can customize it further by:
+- **Adding Tables**: Create additional tables to support new features or data types.
+- **Modifying Columns**: Alter existing columns, add new columns, or remove columns based on your requirements.
+- **Adjusting Constraints**: Change foreign key relationships, add or remove constraints for data integrity.
