@@ -46,13 +46,13 @@ This database schema supports a vehicle rental management system. Here's a break
 
 ### vehicle:
 Stores information about vehicles available for rent.
-**vID**: Unique identifier for each vehicle.
-**lID**: Location ID where the vehicle is primarily located (foreign key to the 'location' table).
-**make**: Vehicle manufacturer.
-**model**: Vehicle model.
-**year**: Vehicle manufacturing year.
-**mileage**: Odometer reading.
-**availability**: Indicates if the vehicle is currently available to rent (Boolean).
+- **vID**: Unique identifier for each vehicle.
+- **lID**: Location ID where the vehicle is primarily located (foreign key to the 'location' table).
+- **make**: Vehicle manufacturer.
+- **model**: Vehicle model.
+- **year**: Vehicle manufacturing year.
+- **mileage**: Odometer reading.
+- **availability**: Indicates if the vehicle is currently available to rent (Boolean).
 
 ### customer:
 Stores customer information.
