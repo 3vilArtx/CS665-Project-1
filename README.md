@@ -34,72 +34,49 @@ For detailed instructions on how to execute SQL scripts in your database environ
 ## Customization
 You may customize the `insert.sql` script to fit your specific requirements by editing the SQL INSERT statements. This can include adding new records, modifying existing ones, or removing entries that do not fit your scenario.
 
-## Conclusion
-This README and the accompanying `insert.sql` script are intended to provide a starting point for populating a vehicle rental database with realistic data. It can be used for educational purposes, software development, and database management training related to vehicle rental operations.
-
 # Vehicle Rental Databse Create Script
 
 ## Database Overview
 This database schema supports a vehicle rental management system. Here's a breakdown of the tables and their purpose:
 
-## Tables
+## Overview
+This README accompanies the `insert.sql` script designed for a vehicle rental database. The database schema and sample data emulate a vehicle rental business operating in Wichita, Kansas. The structure is intended to support the management of vehicles, customers, rental histories, employees, locations, and associated payment records.
 
-### vehicle:
-Stores information about vehicles available for rent.
-- **vID**: Unique identifier for each vehicle.
-- **lID**: Location ID where the vehicle is primarily located (foreign key to the 'location' table).
-- **make**: Vehicle manufacturer.
-- **model**: Vehicle model.
-- **year**: Vehicle manufacturing year.
-- **mileage**: Odometer reading.
-- **availability**: Indicates if the vehicle is currently available to rent (Boolean).
+## Database Schema
+The database incorporates the following tables:
 
-### customer:
-Stores customer information.
-**cID**: Unique identifier for each customer.
-**fName**: Customer's first name.
-**lName**: Customer's last name.
-**pNumber**: Customer's phone number.
-**address**: Customer's address.
-**pref_payment**: Customer's preferred payment method.
+- **vehicle**: Stores essential information about each vehicle available for rent.
+-- **Fields**: vID (unique ID), lID (location ID), make, model, year, mileage, availability (Boolean)
 
-### rental_history:
-Stores a record of each rental transaction.
-**rID**: Unique identifier for each rental.
-**vID**: ID of the rented vehicle (foreign key).
-**cID**: ID of the customer who rented the vehicle (foreign key).
-**rent_Date**: Date vehicle was rented.
-**return_Date**: Date vehicle was returned
-**rent_loc**: Location ID where the vehicle was rented from (foreign key).
-**return_loc**: Location ID where the vehicle was returned to (foreign key).
-**cost**: Total cost of the rental.
-**comments**: Any additional notes about the rental.
+- **customer**:  Holds customer data.
+**Fields**: cID (unique ID), fName, lName, pNumber (phone number), address, pref_payment (preferred payment method)
 
-### employee:
-Stores employee information.
-**eID**: Unique identifier for each employee.
-**lID**: Location ID where the employee works (foreign key).
-**fName**: Employee's first name.
-**lName**: Employee's last name.
-**pNumber**: Employee's phone number.
-**address**: Employee's address.
-**salary**: Employee's salary.
+- **rental_history**:  Tracks rental transactions.
+Fields: rID (unique ID), vID, cID, rent_Date, return_Date, rent_loc (rental location ID), return_loc (return location ID), cost, comments
 
-### location:
-Stores information about rental locations.
-**lID**: Unique identifier for each location.
-**address**: Location's address.
-**pNumber**: Location's phone number.
-**open**: Location's opening time.
-**close**: Location's closing time.
+- **employee**: Contains employee information.
+Fields: eID (unique ID), lID (location ID), fName, lName, pNumber, address, salary
 
-### payments:
-Tracks payments related to rentals.
-**paymentID**: Unique identifier for each payment.
-**amount**: Payment amount.
-**cID**: Customer ID associated with the payment (foreign key).
-**eID**: Employee ID who processed the payment (foreign key).
-**rID**: Rental ID associated with the payment (foreign key).
-**method**: Payment method (e.g., cash, credit card).
-**date**: Payment date.
-**comments**: Any additional notes about the payment.
+- **location**: Stores information about rental locations.
+Fields: lID (unique ID), address, pNumber, open (opening time), close (closing time)
+
+- **payments**: Manages payment records for rentals.
+Fields: paymentID (unique ID), amount, cID, eID, rID, method, date, comments
+
+## Insert Script
+The `insert.sql` script provides sample data to populate the database. This data includes:
+Locations: Realistic addresses and phone numbers of potential rental locations within Wichita, KS.
+Vehicles: Plausible information covering make, model, year, and mileage of rental vehicles.
+Customers: Example customer details including names, addresses, phone numbers, and preferred payment options.
+Employees: Sample employee data with their assigned location, name, contact information, and salary.
+Rental Histories: Representative rental records, including associated vehicle, customer, rental dates, and return details.
+Payments: Payment records linked to rental transactions, specifying the payment method and any additional notes.
+
+## Usage
+Prerequisites: A running database server (MySQL, PostgreSQL, or similar).
+Schema Creation: Create the database schema using a separate script (not included).
+Execution: Run the `insert.sql` script to populate the database with the initial data.
+Refer to your database system's documentation for specific instructions on script execution.
+
+## Customization
+Tailor the `insert.sql` script to your needs by modifying the SQL INSERT statements. Add new data, change existing values, or delete entries as required.
