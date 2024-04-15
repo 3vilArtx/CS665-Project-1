@@ -79,3 +79,29 @@ The schema defined in create.sql provides a foundation. You can customize it fur
 - **Adding Tables**: Create additional tables to support new features or data types.
 - **Modifying Columns**: Alter existing columns, add new columns, or remove columns based on your requirements.
 - **Adjusting Constraints**: Change foreign key relationships, add or remove constraints for data integrity.
+
+# Vehicle Rental Databse CRUD
+
+## Overview
+This README accompanies the `crud.sql` script, which demonstrates core CRUD (Create, Read, Update, Delete) operations for the vehicle rental database schema. The included SQL statements serve as examples for how to manipulate data within the database.
+
+## CRUD Operations
+The script covers the following actions:
+
+- **Create** :The insertion of new records into the rental_history and payments tables is illustrated within the context of adding a rental transaction. Note that full table creation would likely be defined within a separate create.sql script.
+- **Read**:Various SELECT queries provide examples for retrieving information. Report types include vehicle lists, rental histories, available vehicles, financial overviews, and data integrity checks.
+- **Update**:Statements demonstrate adjustments to records within the 'location', 'vehicle', 'employee', 'customer', and 'rental_history' tables.
+- **Delete**: Examples showcase the removal of records based on scenarios such as a location closure, vehicle damage, customer data removal, employee termination, and erroneous rental entries.
+
+## Usage
+- **Prerequisites**:
+  - An existing database with the defined schema (presumably created via a create.sql script).
+  - A database server (like MySQL or PostgreSQL) capable of executing SQL scripts.
+- **Execution**: Sections of crud.sql can be executed individually to perform specific actions.  **Use caution, especially with DELETE statements, as they permanently remove data.**
+
+## Important Notes
+- **Data Sensitivity**: Consider the sensitivity of any real data before running DELETE operations. Backups are always recommended.
+- **Customization**: Adapt the provided examples to fit your specific data and scenarios.
+- **Complementary Scripts**:
+  - A `create.sql` script would likely define the initial database structure.
+  - An `insert.sql` script could handle the population of those database tables with initial data.
