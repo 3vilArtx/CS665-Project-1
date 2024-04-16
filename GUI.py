@@ -267,10 +267,10 @@ def open_update_window():
     selected_table = tk.StringVar(new_window)
     selected_table.set("Select Table")  # Set the default value
 
-    table_dropdown = tk.OptionMenu(new_window, selected_table, *table_names, command=lambda selected: open_table_selection_window(selected, new_window))
+    table_dropdown = tk.OptionMenu(new_window, selected_table, *table_names, command=lambda selected: otsw(selected, new_window))
     table_dropdown.pack()
 
-def open_table_selection_window(selected, new_window):
+def otsw(selected, new_window):
     query = f"SELECT * FROM {selected}"
     df = execute_query_to_dataframe(query)
     show_update_fields(df, selected, new_window)
