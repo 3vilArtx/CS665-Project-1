@@ -34,6 +34,74 @@ For detailed instructions on how to execute SQL scripts in your database environ
 ## Customization
 You may customize the `insert.sql` script to fit your specific requirements by editing the SQL INSERT statements. This can include adding new records, modifying existing ones, or removing entries that do not fit your scenario.
 
-## Conclusion
-This README and the accompanying `insert.sql` script are intended to provide a starting point for populating a vehicle rental database with realistic data. It can be used for educational purposes, software development, and database management training related to vehicle rental operations.
-"""
+# Vehicle Rental Databse Create Script
+
+## Overview
+This README accompanies the `create.sql` script, which constructs the database schema for a vehicle rental management system. The database is designed with a focus on storing information about vehicles, customers, rental transactions, employees, locations, and payments likely to be relevant to a Wichita, Kansas-based vehicle rental operation.
+
+## Database Schema
+The `create.sql` incorporates the following tables:
+
+- **vehicle**: Stores essential information about each vehicle available for rent.
+  - **Fields**: vID (unique ID), lID (location ID), make, model, year, mileage, availability (Boolean)
+
+- **customer**:  Holds customer data.
+  - **Fields**: cID (unique ID), fName, lName, pNumber (phone number), address, pref_payment (preferred payment method)
+
+- **rental_history**:  Tracks rental transactions.
+  - **Fields**: rID (unique ID), vID, cID, rent_Date, return_Date, rent_loc (rental location ID), return_loc (return location ID), cost, comments
+
+- **employee**: Contains employee information.
+  - **Fields**: eID (unique ID), lID (location ID), fName, lName, pNumber, address, salary
+
+- **location**: Stores information about rental locations.
+  - **Fields**: lID (unique ID), address, pNumber, open (opening time), close (closing time)
+
+- **payments**: Manages payment records for rentals.
+  - **Fields**: paymentID (unique ID), amount, cID, eID, rID, method, date, comments
+
+## Create Script
+The `create.sql` script provides sample data to populate the database. This data includes:
+- **Locations**: Realistic addresses and phone numbers of potential rental locations within Wichita, KS.
+- **Vehicles**: Plausible information covering make, model, year, and mileage of rental vehicles.
+- **Customers**: Example customer details including names, addresses, phone numbers, and preferred payment options.
+- **Employees**: Sample employee data with their assigned location, name, contact information, and salary.
+- **Rental** Histories: Representative rental records, including associated vehicle, customer, rental dates, and return details.
+- **Payments**: Payment records linked to rental transactions, specifying the payment method and any additional notes.
+
+## Usage
+1. **Prerequisites**: A database server (MySQL, PostgreSQL, or similar) capable of executing SQL scripts.
+2. **Execution**: Run the `create.sql` script to build the database schema.
+3. **Population**: Utilize a separate script (e.g., `insert.sql`) to insert data into the newly created tables.
+
+## Customization
+The schema defined in create.sql provides a foundation. You can customize it further by:
+- **Adding Tables**: Create additional tables to support new features or data types.
+- **Modifying Columns**: Alter existing columns, add new columns, or remove columns based on your requirements.
+- **Adjusting Constraints**: Change foreign key relationships, add or remove constraints for data integrity.
+
+# Vehicle Rental Databse CRUD
+
+## Overview
+This README accompanies the `crud.sql` script, which demonstrates core CRUD (Create, Read, Update, Delete) operations for the vehicle rental database schema. The included SQL statements serve as examples for how to manipulate data within the database.
+
+## CRUD Operations
+The script covers the following actions:
+
+- **Create** :The insertion of new records into the rental_history and payments tables is illustrated within the context of adding a rental transaction. Note that full table creation would likely be defined within a separate create.sql script.
+- **Read**:Various SELECT queries provide examples for retrieving information. Report types include vehicle lists, rental histories, available vehicles, financial overviews, and data integrity checks.
+- **Update**:Statements demonstrate adjustments to records within the 'location', 'vehicle', 'employee', 'customer', and 'rental_history' tables.
+- **Delete**: Examples showcase the removal of records based on scenarios such as a location closure, vehicle damage, customer data removal, employee termination, and erroneous rental entries.
+
+## Usage
+- **Prerequisites**:
+  - An existing database with the defined schema (presumably created via a create.sql script).
+  - A database server (like MySQL or PostgreSQL) capable of executing SQL scripts.
+- **Execution**: Sections of crud.sql can be executed individually to perform specific actions.  **Use caution, especially with DELETE statements, as they permanently remove data.**
+
+## Important Notes
+- **Data Sensitivity**: Consider the sensitivity of any real data before running DELETE operations. Backups are always recommended.
+- **Customization**: Adapt the provided examples to fit your specific data and scenarios.
+- **Complementary Scripts**:
+  - A `create.sql` script would likely define the initial database structure.
+  - An `insert.sql` script could handle the population of those database tables with initial data.
