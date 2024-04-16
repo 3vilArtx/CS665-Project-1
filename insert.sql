@@ -9,10 +9,10 @@ INSERT INTO location (address, pNumber, open, close) VALUES
 
 -- Inserting into vehicle
 INSERT INTO vehicle (lID, make, model, year, mileage, availability) VALUES
-(1, 'Ford', 'F-150', 2019, 10500, TRUE),
-(2, 'Chevrolet', 'Silverado', 2018, 15700, TRUE),
-(1, 'Toyota', 'Camry', 2020, 6000, TRUE),
-(2, 'Honda', 'Civic', 2021, 3200, TRUE);
+(1, 'Ford', 'F-150', 2019, 10500, 1),
+(2, 'Chevrolet', 'Silverado', 2018, 15700, 1),
+(1, 'Toyota', 'Camry', 2020, 6000, 1),
+(2, 'Honda', 'Civic', 2021, 3200, 1);
 
 -- Inserting into customer
 INSERT INTO customer (fName, lName, pNumber, address, pref_payment) VALUES
@@ -42,9 +42,9 @@ INSERT INTO payments (amount, cID, rID, method, date, comments) VALUES
 (200.00, 3, 3,'Cash', '2024-04-11', 'Payment for Toyota Camry rental completed.'),
 (180.00, 4, 4,'PayPal', '2024-04-15', 'Payment for Honda Civic rental completed.');
 
--- Inserting employee pay into payments 
+-- Inserting employee pay into payments
 INSERT INTO payments (amount, eID, method, date, comments) VALUES
-(-2,166.66, 1, 'DD', '2024-4-5', "Payment made to Ethan Adams")
-(-1958.33, 2, 'Check', '2024-4-5', "Payment made to Sophia Clark")
-(-1791.66, 3, 'DD', '2024-4-5', "Payment made to Noah Garcia")
-(-2333.33, 4, 'DD', '2024-4-5', "Payment made to Emma Davis")
+(-166.66, 1, 'DD', '2024-4-5', "Payment made to Ethan Adams"),
+(-1958.33, 2, 'Check', '2024-4-5', "Payment made to Sophia Clark"),
+(-1791.66, 3, 'DD', '2024-4-5', "Payment made to Noah Garcia"),
+(-2333.33, 4, 'DD', '2024-4-5', "Payment made to Emma Davis");
